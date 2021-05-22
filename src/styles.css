@@ -1,0 +1,79 @@
+html {
+  background: #bd9bd3;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.todo-container {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border-radius: 8px;
+  max-width: 60%;
+}
+h3 {
+  font-weight: 400;
+  font-size: 25px;
+  text-align: left;
+  margin-left: 20px;
+}
+.todo {
+  margin-top: 15px;
+  padding: 20px;
+  /* border: 2px solid; */
+  background: lavender;
+  /* box-shadow: -5px -5px 5px -2px #e8d9f7; */
+}
+h2 {
+  text-align: left;
+  margin-left: 20px;
+}
+.com {
+  background: #008000b8;
+  padding: 7px;
+  border-radius: 10px;
+  margin-left: -95%;
+}
+.non {
+  padding: 7px;
+  border-radius: 10px;
+  margin-left: -95%;
+}
+.text {
+  text-align: center;
+  margin-top: -20px;
+}
+.reset {
+  border: none;
+  background: lightgreen;
+  padding: 8px;
+  border-radius: 14px;
+  margin-left: flex-end;
+}
+input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 20px 28%;
+}
+input:focus {
+  outline: none;
+}
+::placeholder {
+  color: #976ec2;
+  opacity: 1;
+  font-size: 20px;
+}
+.add {
+  margin-left: 15px;
+  border: none;
+  background: lightgreen;
+  padding: 8px;
+  margin-right: 6px;
+  border-radius: 4px;
+}
+
+p {
+  padding-left: 5px;
+}
