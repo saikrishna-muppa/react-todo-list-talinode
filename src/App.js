@@ -51,17 +51,19 @@ const App = () => {
         {items
           .filter((item) => item.fav === false)
           .map((item) => {
-            return (
-              <div className="todo" key={item.id}>
-                <div>
-                  <button
-                    className="non"
-                    onClick={() => makeFav(item.id)}
-                  ></button>
+            if (item.length > 1) {
+              return (
+                <div className="todo" key={item.id}>
+                  <div>
+                    <button
+                      className="non"
+                      onClick={() => makeFav(item.id)}
+                    ></button>
+                  </div>
+                  <div className="text"> {item.title}</div>
                 </div>
-                <div className="text"> {item.title}</div>
-              </div>
-            );
+              );
+            }
           })}
         <hr />
         <h2>completed</h2>
