@@ -5,15 +5,21 @@ const App = () => {
   const [inputValue, setInputValue] = useState("");
   const [items, setItems] = useState([]);
 
-  const addItem = () => {
+  // const addeditem = (e) => {
+  //   setInputValue(e.target.value);
+  // };
+
+  const addItem = (e) => {
+    // console.log(inputValue, "inputvalue");
     const newItem = {
       id: new Date().getTime(),
       fav: false,
       title: inputValue
     };
+
     setItems((oldState) => [...oldState, newItem]);
     setInputValue("");
-    console.log(setInputValue, "setinput");
+    // console.log(inputValue, "setinput");
   };
 
   const makeFav = (id) => {
@@ -40,7 +46,7 @@ const App = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button className="add" onClick={() => addItem()}>
+        <button className="add" onClick={(e) => addItem(e)}>
           Add
         </button>
         <button className="reset" onClick={() => reset()}>
@@ -51,7 +57,7 @@ const App = () => {
         {items
           .filter((item) => item.fav === false)
           .map((item) => {
-            if (item.length > 1) {
+            if (item.title.length > 1) {
               return (
                 <div className="todo" key={item.id}>
                   <div>
@@ -70,17 +76,19 @@ const App = () => {
         {items
           .filter((item) => item.fav === true)
           .map((item) => {
-            return (
-              <div className="todo" key={item.id}>
-                <div>
-                  <button
-                    className="com"
-                    onClick={() => makeFav(item.id)}
-                  ></button>
+            if (item.title.length > 1) {
+              return (
+                <div className="todo" key={item.id}>
+                  <div>
+                    <button
+                      className="com"
+                      onClick={() => makeFav(item.id)}
+                    ></button>
+                  </div>
+                  <div className="text"> {item.title}</div>
                 </div>
-                <div className="text"> {item.title}</div>
-              </div>
-            );
+              );
+            }
           })}
       </div>
     </div>
